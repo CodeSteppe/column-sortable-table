@@ -16,7 +16,7 @@ th:hover {
 
 th,
 td {
-  border: 1px solid #fff;
+  border: 1px solid #000;
   padding: 10px;
 }
 
@@ -25,13 +25,13 @@ td {
 }
 
 [data-id=col1] {
-  background-color: #ffd8bf;
+  background-color: #ffa39e;
 }
 
 [data-id=col2] {
-  background-color: #f4ffb8;
+  background-color: #fffb8f;
 }
 
 [data-id=col3] {
-  background-color: #b5f5ec;
+  background-color: #91caff;
 }
