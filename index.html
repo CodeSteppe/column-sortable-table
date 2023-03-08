@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Column Sortable Table</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <table id="my-table">
+    <thead>
+      <tr class="headers">
+        <th draggable="true" data-id="col1">Column 1</th>
+        <th draggable="true" data-id="col2">Column 2</th>
+        <th draggable="true" data-id="col3">Column 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-id="col1">Row 1, Column 1</td>
+        <td data-id="col2">Row 1, Column 2</td>
+        <td data-id="col3">Row 1, Column 3</td>
+      </tr>
+      <tr>
+        <td data-id="col1">Row 2, Column 1</td>
+        <td data-id="col2">Row 2, Column 2</td>
+        <td data-id="col3">Row 2, Column 3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
