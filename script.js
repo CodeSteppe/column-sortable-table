@@ -19,7 +19,6 @@ function sortColumns() {
 function handleDragStart(e) {
   draggedHeader = this;
   e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('id', this.dataset.id);
   this.classList.add('dragged');
 }
 
