@@ -34,13 +34,16 @@ td {
 }
 
 [data-id=col1] {
-  background-color: #ffa39e;
+  background-color: #fff2e8;
+  color: #d4380d;
 }
 
 [data-id=col2] {
-  background-color: #fffb8f;
+  background-color: #f6ffed;
+  color: #389e0d;
 }
 
 [data-id=col3] {
-  background-color: #91caff;
+  background-color: #f0f5ff;
+  color: #1d39c4;
 }
