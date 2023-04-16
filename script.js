@@ -23,9 +23,8 @@ function handleDragStart(e) {
 }
 
 function handleDragOver(e) {
-  if (e.preventDefault) {
-    e.preventDefault();
-  }
+  // prevent default to allow drop
+  e.preventDefault();
   e.dataTransfer.dropEffect = 'move';
   return false;
 }
@@ -39,10 +38,8 @@ function handleDragLeave(e) {
 }
 
 function handleDrop(e) {
-  if (e.stopPropagation) {
-    e.stopPropagation();
-  }
   const dropTarget = this;
+  dropTarget.classList.remove('over');
   if (draggedHeader !== dropTarget) {
     const draggedHeaderCurrentIndex = order.indexOf(draggedHeader.dataset.id);
     const dropTargetCurrentIndex = order.indexOf(dropTarget.dataset.id);
@@ -52,21 +49,23 @@ function handleDrop(e) {
     // console.log('new order', order);
     sortColumns();
   }
-  return false;
 }
 
 function handleDragEnd(e) {
-  this.classList.remove('over');
   this.classList.remove('dragged');
 }
 
-const ths = table.getElementsByTagName('th');
+function listenEvents() {
+  const ths = table.getElementsByTagName('th');
 
-for (let i = 0; i < ths.length; i++) {
-  ths[i].addEventListener('dragstart', handleDragStart, false);
-  ths[i].addEventListener('dragenter', handleDragEnter, false);
-  ths[i].addEventListener('dragover', handleDragOver, false);
-  ths[i].addEventListener('dragleave', handleDragLeave, false);
-  ths[i].addEventListener('drop', handleDrop, false);
-  ths[i].addEventListener('dragend', handleDragEnd, false);
+  for (let i = 0; i < ths.length; i++) {
+    ths[i].addEventListener('dragstart', handleDragStart);
+    ths[i].addEventListener('dragenter', handleDragEnter);
+    ths[i].addEventListener('dragover', handleDragOver);
+    ths[i].addEventListener('dragleave', handleDragLeave);
+    ths[i].addEventListener('drop', handleDrop);
+    ths[i].addEventListener('dragend', handleDragEnd);
+  }
 }
+
+listenEvents();
